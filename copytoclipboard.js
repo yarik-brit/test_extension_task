@@ -34,9 +34,12 @@ function copyToClipboard(element) {
 	var range = document.createRange();
 	range.selectNodeContents(text);
 	selection.addRange(range);
+
+	// Copying to the clipboard
 	document.execCommand('copy');
 	selection.removeAllRanges();
 
+	// Animates the "Copied!" string (fades in and out)
 	document.getElementById(element.id + '_copy').innerText = 'Copied!';
 	var id = setInterval(frame, 50);
 	var opacity = 0; 

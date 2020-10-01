@@ -1,14 +1,21 @@
 var buttons = document.getElementById('foot').childNodes;
 var pages = document.getElementsByClassName('page');
+// Returns the left position of given element 
 function getLeftPosition(elem) {
   return parseInt(window.getComputedStyle(elem).getPropertyValue('left').replace('px', ''));
 }
+// Animates the swipe effect
 function animation(element) {
   var elem = document.getElementById(this.dataset.text);   
   var pos = 0;
   var left_pos = getLeftPosition(elem);
   var id = setInterval(frame, 25);
+
+  //Desides whether swipe to the left or to the right
   var sign = (left_pos > 0) ? -1 : 1;
+
+  // Moves pages left or right until  the chosen page
+  // appears on the screen (left position of page == 0)
   function frame() {
     if (getLeftPosition(elem) == 0) {
       clearInterval(id);
