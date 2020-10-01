@@ -1,0 +1,5 @@
+A small Chrome extension project representing a Amazon store extension.
+Includes 3 tabs:
+	tab1 - discount coupons tab with ability to copy code to clipboard;
+	tab2 - link to partner sites, links open in a new tab;
+	tab3 - 'feedback' with extension owner, opening new mail tab.
